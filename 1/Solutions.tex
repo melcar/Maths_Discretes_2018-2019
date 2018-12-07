@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{amssymb}
+\usepackage[makeroom]{cancel}
 
 %Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
 \title{\textbf{TP1}\\ Solutions}
@@ -23,9 +24,31 @@
 \item $|S(A)| = a!$
 \end{enumerate}
 \section*{Exercice 2}
+\begin{enumerate}
+\item $|F^x| = 1$, donc $|F|=1$ puisque $|F^x|=f^x$ pour $|F|=f$ et $|X|=x$ .
+\item $|Y^F|=1$, donc F n'existe pas si non vide.
+\end{enumerate}
 
 \section*{Exercice 3}
-
+\begin{enumerate}
+\item \begin{align*}
+\text{Supposons $f$ non-injective}&\\
+&\text{alors } \exists a,b \in A \text{ tq } f(a)=f(b)\\
+&\text{et donc } g\mathord\circ f (a) = g\mathord\circ f (b)\\
+&\text{mais }g\mathord\circ f \text{ est injective, donc $f$ doit être inejctive}
+\end{align*}
+\item \begin{align*}
+\text{Supposons $g$ non surjective}& \\
+&\text{alors } \exists c \in C : \nexists b \in B \text{ tq } g(b) = c\\
+&\text{et donc }\exists c \in C : \nexists a \in A \text{ tqt } g\mathord\circ f(a ) = c\\
+&\text{mais $g\mathord\circ f$ est surjective, donc $g$ doit être surjective}
+\end{align*}
+\item \begin{align*}
+\text{si $g\mathord\circ f$ est bijective, alors }&\text{$g\mathord\circ f$ est surjective et injective}\\
+& \text{comme démontré en 1, $f$ est injective}\\
+& \text{comme démontré en 2, $g$ est donc sujective}
+\end{align*}
+\end{enumerate}
 \section*{Exercice 4}
 \section*{Exercice 5}
 \section*{Exercice 6}
