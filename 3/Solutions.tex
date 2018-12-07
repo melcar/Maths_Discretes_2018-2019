@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{amssymb}
+\usepackage{xcolor}
 
 %Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
 \title{\textbf{Maths Discrètes}\\ Solutions TP 3}
@@ -56,11 +57,170 @@ n + 3\\
 0+1+3
 \end{pmatrix}\\&&&= \begin{pmatrix} 10 \\ 4\end{pmatrix} = 210
 \end{align*}
+\item$ 0 < s \leq 6$ et $s \in \mathbb{Z}_+$, $d=4$
+\begin{align*}
+\underset{n=1}{\overset{6}{\sum}}
+\begin{pmatrix}
+n+4-1\\
+4-1
+\end{pmatrix} &=\underset{n=1}{\overset{6}{\sum}}
+\begin{pmatrix}
+n+3\\
+4-1
+\end{pmatrix}\\
+&=\underset{n=0}{\overset{6}{\sum}}
+\begin{pmatrix}
+n+3\\
+0+3
+\end{pmatrix}
+-
+\begin{pmatrix}
+3\\
+3
+\end{pmatrix}\\
+&=
+\begin{pmatrix}
+10\\
+4
+\end{pmatrix}-1\\
+&=209 \text{\textcolor{red}{ J'ai pas compris tes annotation}}
+\end{align*}
+
 \item
-\item
+\begin{alignat*}{4}
+ &x \geq 3 &&; x =x' +3\\
+&y \geq -1 &&; y = y' -1\\
+&z \geq 1 &&; z = z' +1\\
+&t \geq -2 &&; t = t'-2
+\end{alignat*}
+$\Rightarrow$ $(x'+3)+(y'-1)+(z'+1)+(t'-2) \leq 6$\\
+$\Leftrightarrow$ $x'+y'+z'+t' \leq 5$ \\
+$\Rightarrow$ $s \leq 5 \text{ et } s \in \mathbb{Z}, d=4$ \hspace{3cm} $\in \mathbb{Z}$ parce que $x,y,z,t\geq 0$\\
+\begin{alignat*}{4}
+\underset{n=0}{\overset{5}{\sum}}
+\begin{pmatrix}
+n + 4 -1\\
+4-1
+\end{pmatrix}
+&= \underset{n=0}{\overset{5}{\sum}}
+\begin{pmatrix}
+n+3\\
+3
+\end{pmatrix}\\
+&= 
+\begin{pmatrix}
+9\\
+4
+\end{pmatrix} = 126
+\end{alignat*}
 \end{enumerate}
 \section*{Exercice 4}
+$$x+y+z = 415 -t$$
+$$(415-t)+u = 273$$
+$$t-u = 142$$
+$$\text{si on conniat $u$ on connait $t$}$$
+$$\text{(et $u < t$ donc $\mathbb{Z}_+$)}$$
+$$ (x'+1)+(y'+1)+(z'+1)+(u'+1)=273$$
+$$ x'+y'+z'+u' = 269$$
+$$\begin{pmatrix}
+269+4-1\\
+4-1
+\end{pmatrix} = 
+\begin{pmatrix}
+272\\
+3
+\end{pmatrix}
+$$
 \section*{Exercice 5}
+$$ (x'+1)+(y'+1)+(z'+1)+(t'+1) \leq 99$$
+$$ x'+y'+z'+t' \leq 95$$
+$$ \underset{n=0}{\overset{95}{\sum}}
+\begin{pmatrix}
+n+3\\
+3
+\end{pmatrix} = \begin{pmatrix}
+98\\
+3
+\end{pmatrix}$$
+
+
+
 \section*{Exercice 6}
+Avec ces 12 lettres nous pouvons composer $\dfrac{12!}{2!2!2!2!3!1!}$\\
+Il y a 13 emplacements pour U (avant, enter, après)\\
+On a 9 U, donc $\begin{pmatrix}
+13\\
+9
+\end{pmatrix}$ possibilités
+
+ou tous les mots - chaque exceptoin (2u,3u,$\dots$cotes à cote). \textcolor{red}{ ça m'a pas l'air très claire.}
+\section*{Exercice 7}
+16
+\section*{Exercice 8}
+Contradiction\\
+$\rightarrow$ max$_n$ = identiques \textcolor{red}{ J'ai pt mal lu ça me smeble ambigu}\\  
+$\rightarrow$ max$_n$ = différents\\
+pour chaque elem $\in n$, au plus $n$ élements.
+alors $n^2$ Objetcs
+si $n^2+1$ alors soit $n+1$ éléments soit $n+1$ types d'un type
+\section*{Exercice 9}
+\begin{enumerate}
+\item $8^{16}$
+\item $8^8$
+\item $8^{11}$
+\item $7^{14}+7^{15}+7^{16}$
+\item $7^{11}+7^{10}+7^{9}$
+\end{enumerate}
+\section*{Exercice 10}
+Contradiction, Ramsay number $R_{3\cdot3}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
