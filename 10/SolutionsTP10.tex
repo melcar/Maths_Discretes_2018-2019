@@ -18,7 +18,7 @@
 Voir solutions TP 8 et TP 9.
 
 \section*{Exercice 2.1}
-Toutes les triangularisations possibles pour un carré.
+Toutes les triangularisations possibles pour un carré. (Oui, on dirait des rectangles mais c'est des carrés)
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.5]{imgs/carre/carre_1.png}
@@ -129,6 +129,11 @@ Toutes les triangularisations possibles pour un hexagone.
 \clearpage
 
 \section*{Exercice 2.2}
+
+récurrence, car la première triangularisation réduit le polygone \newline 
+pour $T_n$ : nombre de façons de triangulariser un n-gone \newline
+\newline
+$T_n = \sum^{n-2}_{i=0} T_{1+i} T_{n-1-i}$
 
 \section*{Exercice 3}
 Pour toute montée, on ouvre une paranthèse. \newline
