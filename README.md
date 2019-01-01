@@ -1,4 +1,4 @@
-# Maths_DIscretes_2018-2019
+# Maths_Discretes_2018-2019
 
 Corrigés des exos
 - [x] TP1
@@ -8,7 +8,7 @@ Corrigés des exos
 - [x] TP5
 - [x] TP6
 - [X] TP7 (Romain) `Warning:` exo 7 incomplet, demander à Caroline de le refaire !
-- [ ] TP8 (André)
+- [X] TP8 (André)
 - [ ] TP9
 - [X] TP10
 - [ ] TP11
