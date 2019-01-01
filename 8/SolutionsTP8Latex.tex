@@ -1,0 +1,57 @@
+\documentclass[fontsize=10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % handles figures
+\usepackage[fleqn]{mathtools}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{graphicx}
+
+%Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
+\title{\textbf{Séance 7}}
+\author{Antunes André}
+\date{}
+\begin{document}
+\maketitle % fais le titre écris plus haut
+
+\section{Exercice 1}
+
+cas 1 : 1 marche, reste n-1 \\
+cas 2 : 2 marches, reste n-2 \\
+\tab pour $a_{n}$, le nombre de marches à monter, \\
+\tab \tab $a_{n} = a_{n-1}+a_{n-2}$ \\
+\tab \tab $F_{n+1}$ (et pas $F_{n}$ car pas de répétition de 1)\\
+\tab \tab donc pour n=30, $F_{31}$
+
+\section{Exercice 2}
+\tab \tab $D_{n} = D_{n-1}+D_{n-2}$ ou $F_{n+1}$ \\
+
+\section{Exercice 3}
+ $$\lim_{n\to\infty} \frac{F_{n+1}}{F_n{}} = \lim_{n\to\infty} \frac{\frac{1}{\sqrt{5}}[\varphi^{n+1}-\widetilde{\varphi}^{n+1}]}{{\frac{1}{\sqrt{5}}[\varphi^{n}-\widetilde{\varphi}^{n}]}} = $$ \\
+ --> voir avec Caroline ,exo manquante
+ 
+\clearpage
+ 
+\section{Exercice 4}
+\includegraphics[width=\textwidth]{4}
+
+\section{Exercice 5}
+\includegraphics[width=\textwidth]{5}
+
+\section{Exercice 6}
+\includegraphics[width=\textwidth]{6-1}
+\includegraphics[width=\textwidth]{6-2}
+
+\section{Exercice 7}
+\includegraphics[width=\textwidth]{7}
+
+\section{Exercice 8}
+\includegraphics[width=\textwidth]{8}
+
+\section{Exercice 9}
+\includegraphics[width=\textwidth]{9-1}
+\includegraphics[width=\textwidth]{9-2}
+
+
+\end{document}
