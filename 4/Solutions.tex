@@ -104,11 +104,16 @@ Nous avons deux possiblitées :
 \end{description}
 
 \section*{Exercice 5}
-Soit G un graphe simple à n sommets et m arêtes avec m < n. Utiliser
-la récurrence pour montrer que G possède au moins n − m composantes connexes.
+Soit $C$, le nombre de composantes connexes de $G$.\\
+On souhaite ajouter $v$, un sommet quelquonque, à $G$ en le reliant à $k\in{C}$ composantes connexes de $G$.\\
+Alors $G' = G + v$, et $G'$ a $C'=C-k+1$ composantes connexes (puisque $v$ les relie, on perd $k$ composantes, sauf celle qui les contient toutes: $-k+1$).\\
+Donc $G'$ a au moins $m'= m+k$ arêtes et a $n'=n+1$ sommets.\\
+Alors si on prend $C'\geq n'- m'$,\\
+on obtient $C-k+1 \geq n+1 - m+k$,\\
+soit $C \geq n-m$, l'idée de départ.
 
 \section*{Exercice 6}
-Déterminons le nombre de sommet si
+Déterminons le nombre de sommets si
 \begin{itemize}
     \item \textbf{G à 12 arêtes et tous les sommets sont de degré 3 :}\\
         Utilisons le « Handshaking theorem » : $ \displaystyle\sum_{v \in V} deg(v) = 2 |E|$\\
