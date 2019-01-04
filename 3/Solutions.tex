@@ -10,7 +10,6 @@
 
 %Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
 \title{\textbf{Maths Discrètes}\\ Solutions TP 3}
-\author{Beltus Marcel}
 \date{}
 \begin{document}
 \maketitle % fais le titre écris plus haut
@@ -57,33 +56,29 @@ n + 3\\
 0+1+3
 \end{pmatrix}\\&&&= \begin{pmatrix} 10 \\ 4\end{pmatrix} = 210
 \end{align*}
-\item$ 0 < s \leq 6$ et $s \in \mathbb{Z}_+$, $d=4$
+\item$ 0 < s \leq 2$ et $s \in \mathbb{Z}$, $d=4$\\
+puisque $x,y,z,t \geq 1$, alors $s \leq 6 - 4(1)$.
 \begin{align*}
-\underset{n=1}{\overset{6}{\sum}}
+\underset{n=0}{\overset{2}{\sum}}
 \begin{pmatrix}
 n+4-1\\
 4-1
-\end{pmatrix} &=\underset{n=1}{\overset{6}{\sum}}
+\end{pmatrix} &=\underset{n=0}{\overset{2}{\sum}}
 \begin{pmatrix}
 n+3\\
 4-1
 \end{pmatrix}\\
-&=\underset{n=0}{\overset{6}{\sum}}
+&=\underset{n=0}{\overset{2}{\sum}}
 \begin{pmatrix}
 n+3\\
 0+3
-\end{pmatrix}
--
-\begin{pmatrix}
-3\\
-3
 \end{pmatrix}\\
 &=
 \begin{pmatrix}
-10\\
+6\\
 4
-\end{pmatrix}-1\\
-&=209 \text{\textcolor{red}{ J'ai pas compris tes annotation}}
+\end{pmatrix}\\
+&=30
 \end{align*}
 
 \item
@@ -146,23 +141,27 @@ n+3\\
 
 
 \section*{Exercice 6}
-Avec ces 12 lettres nous pouvons composer $\dfrac{12!}{2!2!2!2!3!1!}$\\
-Il y a 13 emplacements pour U (avant, enter, après)\\
-On a 9 U, donc $\begin{pmatrix}
+Sans les U, il y a 12 lettres, avec lesquelles on peut composer $\dfrac{12!}{2!2!2!2!3!1!}$ mots (\textit{voir coefficient multinomial}).\\
+Il y a 13 emplacements pour U dans un mot de 12 lettres pour qu'il n'en ait jamais 2 côte à côte: devant le mot, entre chaque lettre, à la fin du mot.\\
+On a 9 U, soit $\begin{pmatrix}
 13\\
 9
-\end{pmatrix}$ possibilités
+\end{pmatrix}$ possibilités.\\
+On peut donc composer $\dfrac{12!}{2!2!2!2!3!1!} \times \begin{pmatrix}
+13\\
+9
+\end{pmatrix}$ mots.
 
-ou tous les mots - chaque exceptoin (2u,3u,$\dots$cotes à cote). \textcolor{red}{ ça m'a pas l'air très claire.}
+
 \section*{Exercice 7}
 16
 \section*{Exercice 8}
-Contradiction\\
-$\rightarrow$ max$_n$ = identiques \textcolor{red}{ J'ai pt mal lu ça me smeble ambigu}\\  
-$\rightarrow$ max$_n$ = différents\\
-pour chaque elem $\in n$, au plus $n$ élements.
-alors $n^2$ Objetcs
-si $n^2+1$ alors soit $n+1$ éléments soit $n+1$ types d'un type
+[Preuve par contradiction]\\
+Pour $n$ éléments, on a \\
+$\rightarrow$ maximum $n$ éléments identiques\\
+$\rightarrow$ maximum $n$ éléments différents\\
+Pour chaque type d'élément dans $n$, on a au plus $n$ élements, soit $n^2$ objets au total.\\
+Si on a $n^2+1$ objets, alors on doit avoir soit $n+1$ éléments différents soit $n+1$ objets d'un type.
 \section*{Exercice 9}
 \begin{enumerate}
 \item $8^{16}$
@@ -172,55 +171,8 @@ si $n^2+1$ alors soit $n+1$ éléments soit $n+1$ types d'un type
 \item $7^{11}+7^{10}+7^{9}$
 \end{enumerate}
 \section*{Exercice 10}
-Contradiction, Ramsay number $R_{3\cdot3}$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Preuve par contradiction]\\
+voir \textit{Ramsay number}: $R_{3\cdot3}$ 
 
 
 \end{document}
