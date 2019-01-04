@@ -1,0 +1,127 @@
+\documentclass[fontsize=10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % handles figures
+\usepackage[fleqn]{mathtools}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{graphicx}
+
+%Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
+\title{\textbf{Mathématiques discrètes}\\ Sceance 9}
+\date{}
+\begin{document}
+\maketitle % fais le titre écris plus haut
+
+\section*{Exercice 1 \& 2}
+
+\textit{Voir sceance 8}\\
+
+\section*{Exercice 3}
+\tab $D_{n} = 2D_{n-1}+D_{n-2}$\\
+ 
+\section*{Exercice 4}
+\begin{enumerate}
+\item 
+cas 1: mot commençant par la lettre A\\
+cas 2: mot commençant par B ou C\\
+pour $a_n$, le nombre de mots de $n$ lettres commençant par la lettre A,\\
+et $b_n$, $c_n$, le nombre de mots de $n$ lettres commençant par la lettre B et C respectivement:\\
+$a_n = b_{n-1} + c{n-1}$, puisque qu'un mot commençant par A ne peut contenir qu'un mot de $n-1$ lettres de cas 2.\\
+$b_n = c_n = a_{n-1} + b_{n-1} + c_{n-1}$ \\
+Pour $m_n$, le nombre de mots de $n$ lettres:\\
+\begin{align*}
+m_n &= a_n + b_n + c_n\\
+&= b_{n-1} + c_{n-1} + 2m_{n-1}\\
+&= 2m_{n-1} + 2m_{n-2}
+\end{align*}
+On résout ensuite la récurrence:\\
+solution générale: $m_n = A(1+\sqrt{3})^n + B(1-\sqrt{3})^n$\\\\
+$m_n = (\frac{1}{2}+\frac{1}{\sqrt{3}})(1+\sqrt{3})^n + (\frac{1}{2}-\frac{1}{\sqrt{3}})(1-\sqrt{3})^n$
+
+\item 
+$a_n = b_{n-1} + c{n-1}$\\
+$b_n = a_{n-1} + c_{n-1}$\\
+$c_n = a_{n-1} + b_{n-1} + c_{n-1}$\\
+Pour $m_n$, le nombre de mots de $n$ lettres:\\
+$m_n = 2m_{n-1} + m_{n-2}$\\
+On résout ensuite la récurrence:\\
+solution générale: $m_n = A(1+\sqrt{2})^n + B(1-\sqrt{2})^n$\\\\
+$m_n = \frac{1}{2}\left[(1+\sqrt{2})^{n+1} + (1-\sqrt{2})^{n+1} \right]$
+
+\item 
+$a_n = b_{n-1} + c{n-1}$\\
+$b_n = a_{n-1} + c_{n-1}$\\
+$c_n = a_{n-1} + b_{n-1}$\\
+Pour $m_n$, le nombre de mots de $n$ lettres:\\
+$m_n = 2m_{n-1}$\\
+On résout ensuite la récurrence:\\
+solution générale: $m_n = A2^n$\\\\
+$m_n = 3(2)^{n-1}$
+\end{enumerate}
+
+
+\section*{Exercice 5}
+\begin{enumerate}
+\item $\alpha = 2, \beta = 2, f(n) = n^2$\\
+$\log_\beta{\alpha} = 1$\\
+$f(n) \in{\Omega}(n^{\log_{\beta}{\alpha} + \epsilon})$, pour $\epsilon = 1$.\\
+\begin{align*}
+2f(\frac{n}{2}) &\leq Cf(n),\text{ pour }C < 1\\
+2 \times \frac{1}{4} n^2 &\leq Cn^2\\
+\frac{1}{2} &\leq C
+\end{align*}
+Donc $T(n) \in{\Theta}(n^2)$.
+
+\item $\alpha = 1, \beta = \frac{10}{9}, f(n) = n$\\
+$\log_\beta{\alpha} = 0$\\
+$f(n) \in{\Omega}(n^{\log_{\beta}{\alpha} + \epsilon})$, pour $\epsilon = 1$.\\
+\begin{align*}
+f(\frac{9n}{10}) &\leq Cf(n),\text{ pour }C < 1\\
+\frac{9}{10} &\leq C
+\end{align*}
+Donc $T(n) \in{\Theta}(n)$.
+
+\item $\alpha = 16, \beta = 4, f(n) = n^2$\\
+$\log_\beta{\alpha} = 2$\\
+$f(n) \in{\Theta}(n^{\log_{\beta}{\alpha}})$\\
+Donc $T(n) \in{\Theta}(n^2\log_2{n})$.
+
+\item $\alpha = 7, \beta = 2, f(n) = n^2$\\
+$\log_\beta{\alpha} = log_2{7}$\\
+$f(n) \in{O}(n^{\log_{\beta}{\alpha} - \epsilon})$, pour $\epsilon = log_2{7} - 2$.\\
+Donc $T(n) \in{\Theta}(n^{\log_2{7}})$.
+
+\item $\alpha = 2, \beta = 4, f(n) = \sqrt{n}$\\
+$\log_\beta{\alpha} = \frac{1}{2}$\\
+$f(n) \in{\Theta}(n^{\frac{1}{2}})$\\
+Donc $T(n) \in{\Theta}(n^{\frac{1}{2}}\log_2{n})$.
+
+\item $T(n) - T(n-1) = n$
+\begin{align*}
+& \text{EHA: } x - 1 = 0, \text{ donc solution: } A1^n\\
+& \text{si } \tilde{T}(n) = Bn^2 + C, \text{ alors } 2An -- A  + B = n, \text{ soit } A = B = \frac{1}{2}\\
+& \text{donc } T(n) = \frac{1}{2}(n^2 + n) + A.
+\end{align*}
+Donc $T(n) \in{\Theta}(n^2)$.
+\end{enumerate}
+
+\section*{Exercice 6}
+$a_n = 2^{b_n}$, pour $b_n = \frac{1}{2}(b_{n-1} + b_{n-2})$\\
+\textit{Ici, bête observation si vous essayez de $a_0$ à $a_4$}\\
+$b_n - \frac{1}{2}b_{n-1} - \frac{1}{2}b_{n-2} = 0$
+\begin{align*}
+& \text{EHA: } x^2 - \frac{1}{2}x - \frac{1}{2} = 0, \text{ donc solution: } A + B(-\frac{1}{2})^n\\
+& \text{donc } b_n = \frac{2}{3}\left[ 1 - (- \frac{1}{2})^n \right].
+\end{align*}
+Donc $a_n = 2^{\frac{2}{3}\left[ 1 - (- \frac{1}{2})^n \right]}$.
+
+\section*{Exercice 7}
+Prenons $S_n$, le nombre de potentielles 2ndes lignes si la première est dans l'ordre:\\
+alors $S_n = S_{n-1} + S_{n-2}$\\
+donc $S_n = F_{n+1}$\\
+Quand la 1ere ligne n'est pas dans l'ordre, elle est simplement une permutation possible de celle-ci, soit $n!$.\\\\
+On a donc $n!F_{n+1}$ matrices possibles.
+
+\end{document}
