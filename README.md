@@ -4,7 +4,7 @@ Corrigés des exos
 - [x] TP1
 - [x] TP2
 - [x] TP3
-- [ ] TP4 (Thibault
+- [ ] TP4 (Thibault)
 - [x] TP5
 - [x] TP6
 - [X] TP7 (Romain) `Warning:` exo 7 incomplet, demander à Caroline de le refaire !
