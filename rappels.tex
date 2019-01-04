@@ -1,0 +1,78 @@
+\documentclass[fontsize=10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % handles figures
+\usepackage[fleqn]{mathtools}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+
+%Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
+\title{\textbf{How to latex}\\ il faut regarder le code ;)}
+\author{Beltus Marcel}
+\date{}
+\begin{document}
+\maketitle % fais le titre écris plus haut
+
+\section{Crée une section}
+\begin{enumerate} % commence une liste énumerée
+\item item 1% ajoute un item dans la liste
+\item item 2 % ajoute une deuxième item
+\end{enumerate} % commence une liste énumerée 
+\subsection{Crée une sous section}
+\begin{itemize} % commence une liste avec des points
+\item item 1% ajoute un item dans la liste
+\item item 2 % ajoute une deuxième item
+\end{itemize} % commence une liste énumerée 
+Un passage à la ligne s'indique soit par espacer de deux lignes les lignes entre lesquels 
+
+Nous voulons metre un espace. soit en mettant un double slash en fin de phrase\\
+
+Comme ici
+\section{Les maths}
+pour écrire des maths en latex il faut rentrer dans un environnement mathématique dans lequel certains fonctions comme la création de racine carrées. exemple : $\sqrt{\pi}$\\
+En regardant le code vous pouvez remarquer que pour afficher des objets mathématiques nous appelons des fonctions.(enfin ici ce sont plutot des macros mais chuut ;) ). avec ces fonctions nous pouvons affiché tout un tas de choses\\
+Voici donc une liste non exhaustive d'outils mathémqitue utils pour ce que nous comptons faire.\\
+N'oubliez pas que tout ces éléments doivent être utilisés dans des environnements mathématique.
+\begin{itemize}
+\item \textbackslash pi \textbackslash Pi affichent pi en minuscule et en minuscule respectivement, cela marche avec toutes les lettres grecs $\pi \Pi$
+\item \textbackslash sqrt{} pour afficher une racine $\sqrt{test}$ il faut entre crochet mettre la valeur que l'on veut mettre en racine.
+\item{Mettre un chiffre en exposant/sous exposant se fait en utilise le signe \textasciicircum /\textunderscore  suivie du chiffre. si l'on veut mettre des nombres en exposant/sous exposant il faut les entourer dans des corhcets. \\Exemple : $3^{34} 89_l$}
+\item les signes sommatoires, de produits et d'intégrations peuvenet aussi vous servir on utilise \textbackslash sum, \textbackslash prod, \textbackslash int. \\Exemple :  $\sum_{i}^j = \prod^{78}_m $ et $\int_7^9$
+
+\subsection{Les matrics}
+C'est un peu chiant à faire mais c'est utile.
+$\begin{bmatrix}
+	b  \\
+	a-b
+	\end{bmatrix}$
+$\begin{matrix}
+	b  \\
+	a-b
+	\end{matrix}$
+	$\begin{pmatrix}
+	b & 9\\
+	a & -b\\
+	8  & 9 
+	\end{pmatrix}$
+	les collonnes sont séparées par des \& et les lignes par des \textbackslash\\\\
+	la création se fait comme pour une liste mais en environnement mathématique. sauf qu'à la palce de itemize ou enumerate on a bmatrix, matrix, pmatrix et pleins d'autres que vous pouvez d'autres exemples ici \href{https://fr.wikibooks.org/wiki/LaTeX/%C3%89crire_des_math%C3%A9matiques}{ici}
+	
+\subsection{Les environnements mathématiques}
+Vous connaisser déja l'environenemnt qui commence et se termine par un  \textdollar ce dernier permet de faire des environnements mathématiques inlines. si nous utilisons 2 signes  \textdollar au début et à la fin nous aurons un environnement mathématique centré sur une nouvelle ligne $$ x + y =\text{regardez ici}$$ . vous pouvez aussi voir dans cette exemple que j'ai écrit du texte dans l'environnement mathématique, cela se fait par la simple utilisaiton de la fonction  \textbackslash text{}\\
+
+Il y a un dernier environnement dont j'aimerais vous parler le \emph{align} c'est un environnemnet mathématique dans lequel les différentes équations sont alignés par rapport à des éléments que l'utilisateur indique . On désigne quel élément il faut aligné en le faisant précédé de 1 ou 2 \& 
+
+exmeple : 
+\begin{align*}
+a^2 &= b^2+c^2\\
+a^2 &= 89 + 78\\
+a &= \sqrt{89+78}\\
+a &= 12.9228479833
+\end{align*}
+ici l'alignement se fait sur le signe =. on peut faire plusieurs alignemnt dans la même ligne mais il ne faut pas oublier d'avoir le même nomre de \& par ligne. Car l'alignement se fait en divisant l'espace en colonnes et les colonnes sont délimités par ces \&. Il est donc évident qu'il faut le même nombre de colonne à chaque ligne.\\
+Dernière chose le * dans align* indique juste que les lignes ne doivent pas être numérotées. vous n'aurez probablement pas beosins d'utilisé une version numéroté mais si vous en avez besoins n'hésitez pas à me contacter.
+
+
+\end{itemize}
+\end{document}

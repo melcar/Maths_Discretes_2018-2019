@@ -52,27 +52,35 @@
 \begin{pmatrix} 
 10\\
 4
-\end{pmatrix} = 840$ choix de la couleur puis des cartes
+\end{pmatrix} = 840$, choix de la couleur puis des cartes
 \item$\begin{pmatrix} 
 4\\
 2
 \end{pmatrix}
 \begin{pmatrix} 
-20\\
-4
-\end{pmatrix} -
-\begin{pmatrix} 
-2\\
-1
+10\\
+2
 \end{pmatrix}
+\begin{pmatrix} 
+10\\
+2
+\end{pmatrix} + 
 \begin{pmatrix} 
 4\\
 1
 \end{pmatrix}
 \begin{pmatrix} 
 10\\
-4
-\end{pmatrix}$ couleurs puis cartes, moins les mains à une seule couleur
+3
+\end{pmatrix}
+\begin{pmatrix} 
+3\\
+1
+\end{pmatrix}
+\begin{pmatrix} 
+10\\
+1
+\end{pmatrix}$, choix des cartes pour une main de 2 cartes de chaque couleur, plus choix des cartes pour une main de 3 cartes d'une couleur, 1 de l'autre
 \item $
 \begin{pmatrix} 
 4\\
@@ -93,7 +101,7 @@
 \begin{pmatrix} 
 10\\
 1
-\end{pmatrix}$, couleurs puis couleurs à 2 carte,puis reste des cartes
+\end{pmatrix}$, choix des couleurs puis de celle sur 2 cartes, puis choix des cartes
 \item $10^4$ ou $
 \begin{pmatrix} 
 4\\
@@ -206,16 +214,59 @@ k
 (-1)^k = 0
 $$
 \section*{Exercice 6}
-$$ n\underset{k=0}{\overset{n-1}{\sum}}
-\begin{pmatrix} 
-n-1\\
-k
-\end{pmatrix}
+$$ (x+y)^{n}
 = \underset{k=0}{\overset{n}{\sum}}
 \begin{pmatrix} 
 n\\
 k
-\end{pmatrix}$$
+\end{pmatrix}x^{k}\phantom{a}y^{n-k} $$
+$$ n(x+y)^{n-1}
+= \underset{k=0}{\overset{n}{\sum}}
+\begin{pmatrix} 
+n\\
+k
+\end{pmatrix}k\phantom{a}x^{k-1}\phantom{a}y^{n-k} $$
+$$ n(x+y)^{n-1}
+= \underset{k=1}{\overset{n}{\sum}}
+\begin{pmatrix} 
+n\\
+k
+\end{pmatrix}k\phantom{a}x^{k-1}\phantom{a}y^{n-k} $$
+$$\Downarrow \text{comme } \begin{pmatrix} 
+n\\
+k
+\end{pmatrix}k
+= n\begin{pmatrix} 
+n-1\\
+k-1
+\end{pmatrix} \Downarrow$$
+$$ n(x+y)^{n-1}
+= \underset{k=1}{\overset{n}{\sum}}
+n\begin{pmatrix} 
+n-1\\
+k-1
+\end{pmatrix}x^{k-1}\phantom{a}y^{n-k}, $$
+$$ n(x+y)^{n-1}
+= \phantom{a}n
+\underset{k=0}{\overset{n-1}{\sum}}
+\begin{pmatrix} 
+n-1\\
+k
+\end{pmatrix}x^{k}\phantom{a}y^{n-1-k} $$
+$$\Downarrow \text{si on prend $x=y=1$, alors:} \Downarrow$$
+$$ n2^{n-1}
+= \phantom{a}n
+\underset{k=0}{\overset{n-1}{\sum}}
+\begin{pmatrix} 
+n-1\\
+k
+\end{pmatrix} $$
+$$ n2^{n-1}
+= \underset{k=0}{\overset{n}{\sum}}
+\begin{pmatrix} 
+n\\
+k
+\end{pmatrix}k $$
 \section*{Exercice 7}
 $\overset{n}{\underset{k \text{ pair} = 0}{\sum}}
 \begin{pmatrix} 
@@ -311,15 +362,15 @@ n\\
 k
 \end{pmatrix}
 & = \overset{n}{\underset{k= 0}{\sum}}
-\phantom{a}k\dfrac{n!}{k!(n-k)!}\\
+\phantom{a}k\dfrac{n!}{k!\phantom{a}(n-k)!}\\
 &\Downarrow\text{si $k=0$, tout es à 0. $k/k!$ $\rightarrow 1/(k-1$)}\Downarrow\\
 & = \overset{n}{\underset{k= 1}{\sum}}
-\phantom{a}\dfrac{n!}{(k-1)!(n-k)!}\\
+\phantom{a}\dfrac{n!}{(k-1)!\phantom{a}(n-k)!}\\
 & = n\overset{n}{\underset{k= 1}{\sum}}
-\phantom{a}\dfrac{(n-1)!}{(k-1)!(n-k)!}\\
+\phantom{a}\dfrac{(n-1)!}{(k-1)!\phantom{a}(n-k)!}\\
 &\Downarrow\text{où L = k =1}\Downarrow\\
 & = n\overset{n-1}{\underset{L= 0}{\sum}}
-\phantom{a}\dfrac{(n-1)!}{L!(n-1-L)!}\\
+\phantom{a}\dfrac{(n-1)!}{L!\phantom{a}(n-1-L)!}\\
 &= n2^{n-1}
 \end{align*}
 
@@ -329,8 +380,44 @@ k
 
 
 \section*{Exercice 10}
-$\frac{1}{n+1}(2^{n+1}-1)$
-
+\begin{align*}
+\overset{n}{\underset{k= 0}{\sum}}
+\phantom{a}\frac{1}{k+1}
+\begin{pmatrix}
+n\\
+k
+\end{pmatrix}
+& = \frac{1}{n+1}\phantom{a}
+\overset{n}{\underset{k= 0}{\sum}}
+\phantom{a}\frac{n!\phantom{a}(n+1)}{(k+1)\phantom{a}k!\phantom{a}(n-k)!}\\
+& = \frac{1}{n+1}\phantom{a}
+\overset{n}{\underset{k= 0}{\sum}}
+\begin{pmatrix}
+n+1\\
+k+1
+\end{pmatrix}\\
+& \Downarrow\text{pour arriver à }
+\overset{n+1}{\underset{k= 0}{\sum}}
+\begin{pmatrix}
+n+1\\
+k
+\end{pmatrix} = 2^{n+1} \text{, il faut pour $k=0$}\Downarrow\\
+& = \frac{1}{n+1}\phantom{a}
+\left( \overset{n}{\underset{k= 0}{\sum}}
+\begin{pmatrix}
+n+1\\
+k+1
+\end{pmatrix} + 
+\begin{pmatrix}
+n+1\\
+0
+\end{pmatrix} -
+\begin{pmatrix}
+n+1\\
+0
+\end{pmatrix} \right)\\
+& = \frac{1}{n+1}(2^{n+1}-1)
+\end{align*}
 
 
 \end{document}
