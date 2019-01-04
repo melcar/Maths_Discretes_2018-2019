@@ -10,7 +10,6 @@
 \usepackage[shortlabels]{enumitem}
 %Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
 \title{\textbf{Maths Discrètes}\\ Solutions TP 5}
-\author{Beltus Marcel}
 \date{}
 \begin{document}
 \maketitle % fais le titre écris plus haut
@@ -76,7 +75,7 @@ si $h_5$ n'avait pas de feuilles, il avait $3^5 = 243$ sommets donc $h_5$ possè
 \includegraphics[scale=1]{TP6Exo5.jpg} 
 
 \section*{Exercice 7}
-Comme démo de TP 4 exercice 5.
+Même principe que TP 4 exercice 5.
 
 \section*{Exercice 8}
 \begin{alignat*}{5}
@@ -88,17 +87,23 @@ Comme démo de TP 4 exercice 5.
 \section*{Exercice 9}
 
 $\underset{k=m}{\overset{n}{\sum}}\hspace{0.1cm}\begin{pmatrix} k\\m\end{pmatrix}\begin{pmatrix} n\\k\end{pmatrix} = 2^{n-m}\begin{pmatrix} n\\m\end{pmatrix}$\\
-le nombre de façons d echoisir m parmi k, et k parmi n soit : \\
-le nombre de façons de choisir m parmi n et d'inclure ou non un élément de n dans k. (mn y étant par définition donc sans choix)
+le nombre de façons de choisir $m$ parmi $k$, et $k$ parmi $n$ soit : \\
+le nombre de façons de choisir $m$ parmi $n$ 
+($\begin{pmatrix}
+n\\
+m
+\end{pmatrix}$)
+ et d'inclure ou non un élément de $n$ dans $k$ ($2^n$), $m$ y étant par définition donc sans choix ($n-m$).\\
+\textit{Il existe une solution algébrique, mais même moi qui les préfère en général, je vous dit: ça n'en vaut pas la peine. Mais je l'ai dans mes feuilles si vous êtes curieux.}\\
 
 \includegraphics[scale=1]{TP6Exo9.jpg} 
 
 \section*{Exercice 10}
-Indice 
-$x_1 = \#1$, $x_2 = \#2$,\dots, $x_6 = \#6$ \hspace{1cm} $x_i \geq \in \mathbb{N}$ \\
-où $x_i =$ le nombre de D qui tombent sur i. et si on les additionnent tous on à le nombre de D qu'on a lancé.
-$x_1 + x_2 +x_3 + \dots + x_6 =n$
-Puis il faut retrouver la forme polynomiale.
+Pour\\$x_1 = \#1$, $x_2 = \#2$,\dots, $x_6 = \#6$ \hspace{1cm} $x_i \geq \in \mathbb{N}$ \\
+où $x_i =$ le nombre de dés qui tombent sur la valeur $i$.\\
+Si on les additionne tous, on a toujours le nombre de dés qu'on a lancé:\\
+$x_1 + x_2 +x_3 + \dots + x_6 =n$\\
+On peut donc utiliser un coefficient multinomial.
 
 
 
