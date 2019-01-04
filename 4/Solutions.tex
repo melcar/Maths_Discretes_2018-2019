@@ -258,4 +258,33 @@ Commençons par calculer\footnote{Ça n'est que du produit matriciel : \url{http
 Le nombre de circuit de longeur 4 dans $G$ correspond à la somme des valeurs
 pour $i = j$, c'est à dire, la diagonal : $2 + 12 + 6 + 3 + 5 + 7 = 35$.
 
+
+\section*{Exercice 9}
+\subsection*{Exercice 9.a}
+$|V_{G_4}| = 14, |E_{G_4}| = 24$\\
+$|V_{G_5}| = 20, |E_{G_5}| = 35$
+
+\subsection*{Exercice 9.b}
+$2+(i-1)$ sommets: 2 sommets au cercle puis 1 à chaque intersection intérieure.
+
+\subsection*{Exercice 9.c}
+\begin{align*}
+    |V_{G_n}| &= 2n + \displaystyle\sum_{i=0}^{n-1} i\\
+               &= 2n + \frac{(n-1)(n)}{2}
+\end{align*}
+
+\subsection*{Exercice 9.d}
+$2n$ sommets de degré 3 (autour du cercle)\\
+$\displaystyle\sum_{i=0}^{n-1} i$ sommets de degré 4 (intersections internes)\\
+
+$|E|G_n = \frac{2 * (2n) + 4(\displaystyle\sum_{i=0}^{n-1} i)}{2} =
+2n + 2\displaystyle\sum_{i=0}^{n-1} i$ \hspace{1em} $3n + (n-1)(n)$
+
+
+\subsection*{Exercice 9.e}
+$|V_{G_4}| = 2*4+(3+2+1) = 14$\\
+$|E_{G_4}| = 3*4+2 * (3+2+1) = 24$\\
+$|V_{G_5}| = 2*5+(4+3+2+1) = 20$\\
+$|E_{G_5}| = 3*5+2 * (4+3+2+1) = 35$
+
 \end{document}
