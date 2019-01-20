@@ -1,0 +1,190 @@
+\documentclass[fontsize=10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % handles figures
+\usepackage[fleqn]{mathtools}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{graphicx}
+
+
+%Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
+\title{\textbf{Mathématiques discrètes}\\ Sceance 11}
+\date{}
+\begin{document}
+\maketitle % fais le titre écris plus haut
+
+\section*{Exercice 1}
+La fonction génératrice ordinaire de la suite de nombre harmoniques $(H_n)_{n\in{\mathbb{N}}}$ est\\
+\tab$\underset{n=0}{\overset{\infty}{\sum}} H_n x^n = \frac{1}{1-x}ln\frac{1}{1-x}$\\
+Donc ici, $x = \frac{1}{10}$ et on obtient
+$$\underset{n=0}{\overset{\infty}{\sum}} H_n \left(\frac{1}{10}\right)^n = \frac{10}{9}ln\left(\frac{10}{9}\right)$$
+
+\section*{Exercice 2}
+\begin{enumerate}
+\item
+$x = \frac{1}{2}$ donc
+$$\underset{n=0}{\overset{\infty}{\sum}} H_n \left(\frac{1}{2}\right)^n = 2ln(2)$$
+\item
+La fonction génératrice ordinaire de $\left(n \choose k \right)_{n\in{\mathbb{N}}}$ pour $k \in{\mathbb{N}}$ fixé est\\
+\tab$\underset{n=0}{\overset{\infty}{\sum}} {n \choose k} x^n = \frac{x^k}{(1-x)^{k+1}}$\\
+Ici, $k=2$ et $x=\frac{1}{10}$, donc
+$$\underset{n=0}{\overset{\infty}{\sum}} {n \choose k} \left(\frac{1}{10}\right)^n = \frac{10}{9^3}$$
+\end{enumerate}
+
+\section*{Exercice 3}
+\begin{enumerate}
+\item
+$\underset{n=1}{\overset{\infty}{\sum}} \frac{1}{2^n} = \underset{n=0}{\overset{\infty}{\sum}} \frac{1}{2^n} - \frac{1}{2^0}$, afin d'obtenir une somme depuis $n=0$\\
+$\phantom{aaaaa} = \frac{1}{1-\frac{1}{2}} - 1$, voir Ch5 slide 38\\
+$\phantom{aaaaa} = 1$
+\item
+$\underset{n=1}{\overset{\infty}{\sum}} \frac{n}{2^n} = \underset{n=0}{\overset{\infty}{\sum}} n \frac{1}{2^n} - \left(0{\frac{1}{2^0}}\right)$\\
+$\phantom{aaaaa} = \frac{\frac{1}{2}}{\left(1-\frac{1}{2}\right)^2}$, voir Ch5 slide 44 ou juste connaitre pour $n = {n \choose 1}$\\
+$\phantom{aaaaa} = 2$
+\item
+$\underset{n=1}{\overset{\infty}{\sum}} \frac{1}{n2^n} = \int\frac{1}{1-x} \phantom{a} dx$, si on admet $a_0 = 0$\\
+$\phantom{aaaaa} = ln(\frac{1}{1-x})$, voir Ch5 slide 47\\
+$\phantom{aaaaa} = ln(2)$
+\end{enumerate}
+ 
+\section*{Exercice 4}
+$a_n = 2^n + 3^n$\\
+FGO:
+\begin{align*}
+\underset{n=0}{\overset{\infty}{\sum}} (2^n + 3^n)x^n &= \underset{n=0}{\overset{\infty}{\sum}} (2^n)x^n + \underset{n=0}{\overset{\infty}{\sum}} (3^n)x^n\\
+&= \frac{1}{1-2x} + \frac{1}{1-3x}
+\end{align*}
+FGE:
+\begin{align*}
+\underset{n=0}{\overset{\infty}{\sum}} (2^n + 3^n)\frac{x^n}{n!} &= e^{2x} + e^{3x}
+\end{align*}
+puisque $\underset{n=0}{\overset{\infty}{\sum}} \lambda^n \frac{x^n}{n!} = e^{\lambda x}$.
+\section*{Exercice 5}
+$a_n = 7a_{n-1} + 8a_{n-2} + 7n + \frac{5}{2}$ \tab$a_0=4$, $a_1=7$, $n\geq2$
+\begin{enumerate}
+\item
+$a_n = \frac{3}{2}8^n + \frac{7}{2}(-1)^n - \frac{1}{2}n - 1$
+\item
+\begin{align*}
+f(x) &= \underset{n \geq 0}{\overset{\infty}{\sum}} b_n x^n\\
+&= 4 + 7x + \underset{n=2}{\overset{\infty}{\sum}} (7b_{n-1} + 8b_{n-2})x^n\\
+&= 4 + 7x + 7x\underset{n=2}{\overset{\infty}{\sum}} b_{n-1}x^{n-1} + 8x^2 \underset{n=2}{\overset{\infty}{\sum}} b_{n-2}x^{n-2}\\
+&=4 + 7x + 7x(f(x) - b_0) + 8x^2f(x) \text{, et } b_0 = 4\\
+&=4 - 21x + f(x)(7x + 8x^2)\\
+&= \frac{21x - 4}{8x^2 + 7x -1}
+\end{align*}
+\item
+on factorise $8x^2 + 7x -1 = 0$, ce qui donne $(x+1)(8x-1)=0$
+\begin{align*}
+\frac{21x - 4}{8x^2 + 7x -1} &= \frac{A}{x+1} + \frac{B}{8x - 1}\\
+21x - 4 &= A(8x -1) + B(x + 1)\\
+21 = 8A + B &\text{ et } -4 = -A + B\\
+&A = \frac{25}{9}\\
+&B = \frac{-11}{9}
+\end{align*}
+donc
+\begin{align*}
+f(x) &= \frac{21x - 4}{8x^2 + 7x - 1}\\
+&= \frac{25}{9}\frac{1}{1+x} + \frac{11}{9}\frac{1}{1 - 8x}\\
+&= \frac{25}{9}\underset{n \geq 0}{\overset{\infty}{\sum}} (-1)^n x^n + \frac{11}{9}\underset{n \geq 0}{\overset{\infty}{\sum}} 8^n x^n
+\end{align*}
+comme $b_n = [x^n]f(x)$,\\
+$$b_n = \frac{25}{9}(-1)^n + \frac{11}{9}8^n$$
+\end{enumerate}
+
+\section*{Exercice 6}
+Pour $n$, le prix total d'un pavage, de montant $4x + 2y$ euros, où $x$ est le nombre de dominos verticaux et $y$ le nombre de dominos horizontaux. Le prix total $n$ est donc toujours pair.\\
+Prenons $a_n$, le nombre de pavages à $n$ euros:\\
+$\rightarrow$ si $n$ est impair, $a_n = 0$\\
+$\rightarrow$ si $n$ est pair, $a_n = a_{n-4} + a_{n-2}$, puisque si on prend un domino vertical on retire 4 du budget total, et si on prend un domino horizontal on retire 2 du budget total (un domino horizontal en implique un 2ème pour un pavage de hauteur 2)\\
+on connait:\\
+$\rightarrow a_0 = 1$, une seule manière de dépenser: rien.\\
+$\rightarrow a_1 = 0$, impair\\
+$\rightarrow a_2 = 1$, une seule manière de dépenser: 2 horizontaux\\
+$\rightarrow a_3 = 0$, impair\\
+$\rightarrow a_4 = 2$, soit 4 horizontaux, soit 1 vertical\\
+on se retrouve donc avec:
+\begin{align*}
+A(x) &= \underset{n=0}{\overset{\infty}{\sum}} a_n x^n\\
+&= a_0 + a_1 x^1 + a_2 x^2 + a_3 x^3 + \underset{n = 4}{\overset{\infty}{\sum}} (a_{n-2} + a_{n-4}) x^n\\
+&= 1 + x^2 + x^2 \underset{n=4}{\overset{\infty}{\sum}} a_{n-2}x^{n-2} + x^4 \underset{n=4}{\overset{\infty}{\sum}} a_{n-4}x^{n-4}\\
+&= 1 + x^2 + x^2 (A(x) - a_0) + x^4A(x)\\
+&= 1 + A(x)(x^2 + x^4)\\
+&= \frac{1}{1 - x^2 - x^4}
+\end{align*}
+sachant que\\
+\tab$\underset{n=0}{\overset{\infty}{\sum}}F_n x^n = \frac{x}{1 - x - x^2}$\\\\
+on obtient:\\
+\tab$a_n = 
+     \begin{cases}
+       F_{\frac{n}{2}} $\tab$ \text{$n$ pair}\\
+       0 $\tab$ \text{$n$ impair}\\ 
+     \end{cases}
+$
+
+\section*{Exercice 7}
+\begin{enumerate}
+\item
+$a_0 = 1$, tout comme $a_1$ à $a_4$\\
+$a_5 = 2$, comme $a_6$ à $a_9$\\
+$a_{10} = 4$
+\item
+\textit{Il existe une résolution similaire Ch5 slides 66-71}
+\begin{align*}
+A(x) &= \underset{n=0}{\overset{\infty}{\sum}} a_n x^n\\
+&= \left(\underset{n_1=0}{\overset{\infty}{\sum}}x^{1n_1}\right)\left(\underset{n_5=0}{\overset{\infty}{\sum}}x^{5n_5}\right)\left(\underset{n_{10}=0}{\overset{\infty}{\sum}}x^{10n_{10}}\right)\\
+&= \frac{1}{1-x} \times \frac{1}{1-x^5} \times \frac{1}{1-x^10}\\
+&= \left(\frac{1}{1-x} \times \frac{1+x+x^2+...+x^9}{1+x+x^2+...+x^9}\right)\left(\frac{1}{1-x^5} \times \frac{1+x^5}{1+x^5}\right)\frac{1}{1-x^{10}}\\
+&= \frac{1+x+x^2+...+x^9}{(1-x)+(x-x^2)+(x^2-x^3)+...+(x^9-x^{10})} \times \frac{1+x^5}{1-x^{10}} \times \frac{1}{1-x^{10}}\\
+&= \frac{(1+x+x^2+...+x^9)(1+x^5)}{(1-x^{10})^3}\\
+&= \frac{1}{(1-x^{10})^3}\underset{i=0}{\overset{14}{\sum}} c_i x^i\\
+&\text{la somme représente un polynome de degré 14, puisque le plus haut degré est } x^9x^5 = x^{14}\\
+&\text{pour } c = (1,1,1,1,1,2,2,2,2,2,1,1,1,1,1)\\
+&= \underset{m=0}{\overset{\infty}{\sum}} {m+2 \choose 2} x^{10m} \underset{i=0}{\overset{14}{\sum}} c_i x^i\\
+&\text{comme on sait que } \frac{1}{(1-x)^3} = \underset{k=0}{\overset{\infty}{\sum}} {k+2 \choose 2} x^k\\
+\end{align*}
+on veut couvrir les 14 différentes possibilités de $c_i$ pour $i \in \{0,...,14\}$, qui heureusement sont en trois groupes:\\
+$\rightarrow i \in \{0,...,4\}$, $c=1$\\
+$\rightarrow i \in \{5,...,9\}$, $c=2$\\
+$\rightarrow i \in \{10,...,14\}$, $c=1$\\
+on peut couvrir le premier et le troisième cas en même temps, puisque pour $a \in \{0,...,4\}$, on a $b = 10 +a$ où $b \in \{10,...,14\}$\\
+\newpage
+on pose donc $n= 10m + p$ et $q = 10+p$, pour $p \in \{0,...,9\}$\\
+si $p \in \{0,...,4\}$, on peut écrire $n=10m+p$\\
+$\phantom{aaaaaaaaaaaaaaaaaaaaaaaaaln}=10(m-1) + (10+p)$\\
+$\phantom{aaaaaaaaaaaaaaaaaaaaaaaaal} n=10(m-1) + q$
+\begin{align*}
+\text{donc } a_n =& [x^n] A(x)\\
+=& [x^{10m+p}]A(x) + [x^{10(m-1)+q}]A(x)\\
+=& {m+2 \choose 2}c_p + {(m-1)+2 \choose 2}c_q\\
+=& {m+2 \choose 2} + {m+1 \choose 2}\\
+&\text{comme } p \in \{0,...,4\} \text{ et } q \in \{10,...,14\}, \text{ on sait que } c_p = c_q = 1
+\end{align*}
+si $p \in \{5,...,9\}$, alors $c_p = 2$
+\begin{align*}
+\text{donc } a_n =& 2 {m+2 \choose 2}\\
+\end{align*}
+on se retrouve alors avec
+\begin{align*}
+A(x) &= \underset{n=0}{\overset{\infty}{\sum}} \left[ \left({n+2 \choose 2} + {n+1 \choose 2}\right) \underset{p=0}{\overset{4}{\sum}} x^{10n +p} + 2 {n+2 \choose 2} \underset{p=5}{\overset{9}{\sum}} x^{10n + p} \right]
+\end{align*}
+\item
+pour $n=2010$, $m=201$ et $p=0$:\\
+\begin{align*}
+a_{2010} &= \left[x^{10(201)+0}\right]A(x)\\
+&= {201+2 \choose 2} + {201+1 \choose 2}\\
+&\text{puisque } p=0\\
+&= {203 \choose 2} + {202 \choose 2}
+\end{align*}
+pour $n=2011$, $m=201$ et $p=1$, ce qui donne le même résultat.\\\\\\
+si on a $n=2018$, alors $m=201$ et $p=8$:\\
+\begin{align*}
+a_{2018} &= \left[x^{10(201)+8}\right]A(x)\\
+&= 2 {201+2 \choose 2}\\
+&= 2{203 \choose 2}
+\end{align*}
+\end{enumerate}
+
+\end{document}
