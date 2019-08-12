@@ -30,10 +30,26 @@ s
 \begin{align*}
 &x > 0 \rightarrow x \geq 1 \hspace{0.5cm} &;\hspace{0.5cm}&x' = x-1 \hspace{1cm}\text{ou} \hspace{0.5cm}&x = x'+1 \\
 &y \geq 9 &; \hspace{0.5cm}&y' = y-9 & y = y'+9\\
-&z>-1 \rightarrow z\geq -1&; \hspace{0.5cm}&z' = z+1 & z = z'-1\\
+&z>-2 \rightarrow z\geq -1&; \hspace{0.5cm}&z' = z+1 & z = z'-1\\
 &t \geq 0 &; \hspace{0.5cm}&t' = t & t = t'\\
-&y > 10 \rightarrow u \geq 11 &; \hspace{0.5cm}&u' = u-11 & u = u' +11
+&u > 10 \rightarrow u \geq 11 &; \hspace{0.5cm}&u' = u-11 & u = u' +11
 \end{align*}
+\begin{align*}
+x+y+z+t+u &= 60\\
+(x'+1)+(y'+9)+(z'-1)+t'+(u'+11) &= 60\\
+x'+y'+z'+t'+u' &= 40\\
+\end{align*}
+donc: $s = 40, d = 5$\\
+$$\begin{pmatrix}
+s + d -1\\
+s
+\end{pmatrix}
+=
+\begin{pmatrix}
+44\\
+40
+\end{pmatrix}$$
+
 \section*{Exercice 3}
 \begin{enumerate}
 \item $s \leq 6 $ et $s \in \mathbb{N}$ \hspace{0.5cm}, \hspace{0.5cm} d = 4
@@ -134,8 +150,8 @@ $$ \underset{n=0}{\overset{95}{\sum}}
 n+3\\
 3
 \end{pmatrix} = \begin{pmatrix}
-98\\
-3
+99\\
+4
 \end{pmatrix}$$
 
 
@@ -172,7 +188,11 @@ Si on a $n^2+1$ objets, alors on doit avoir soit $n+1$ éléments différents so
 \end{enumerate}
 \section*{Exercice 10}
 [Preuve par contradiction]\\
-voir \textit{Ramsay number}: $R_{3\cdot3}$ 
+voir \textit{Ramsey number}: $R_{3\cdot3}$\\
 
+Soit une 2-coloration (\textit{qu'on peut facilement utiliser représenter comme relations amies/ennemies}) du graphe complet à six sommets $K_6$.
+Chaque sommet de ce graphe possède donc 5 arêtes. D'après le \textit{principe des tiroirs}, au moins 3 d'entre elles sont de la même couleur.\\
+Soient les arêtes $\{v,r\}, \{v,s\}, \{v,t\}$ de la première couleur, pour $v,r,s,t \in K_6$.\\
+Si l'une des arêtes $\{r,s\}, \{t,s\}, \{t,r\}$ est également de la première couleur, alors le triangle correspondant est entièrement de la première couleur, sinon c'est le triangle formé par ces trois dernières arêtes qui est entièrement de la deuxième couleur.
 
 \end{document}

@@ -39,7 +39,7 @@
 \begin{pmatrix} 
 4\\
 3
-\end{pmatrix} =4$ puisque 4 emplacements et 1 pot d econfiture, 3 pots de miel
+\end{pmatrix} =4$ puisque 4 emplacements et 1 pot de confiture, 3 pots de miel
 \end{enumerate}
 \section*{Exercice 2}
 \begin{enumerate}
@@ -174,7 +174,7 @@ k
 1^k
 \end{pmatrix}
 \begin{pmatrix} 
-1^{x-k}
+1^{n-k}
 \end{pmatrix}\\
 2^n&=\underset{k=0}{\overset{n}{\sum}}
 \begin{pmatrix} 
@@ -212,12 +212,12 @@ k
 (-1)^k = 0
 $$
 \section*{Exercice 6}
-$$ (x+y)^{n}
-= \underset{k=0}{\overset{n}{\sum}}
+$$ \left((x+y)^{n}\right)'
+= \left(\underset{k=0}{\overset{n}{\sum}}
 \begin{pmatrix} 
 n\\
 k
-\end{pmatrix}x^{k}\phantom{a}y^{n-k} $$
+\end{pmatrix}x^{k}\phantom{a}y^{n-k}\right)' $$
 $$ n(x+y)^{n-1}
 = \underset{k=0}{\overset{n}{\sum}}
 \begin{pmatrix} 
@@ -361,12 +361,12 @@ k
 \end{pmatrix}
 & = \overset{n}{\underset{k= 0}{\sum}}
 \phantom{a}k\dfrac{n!}{k!\phantom{a}(n-k)!}\\
-&\Downarrow\text{si $k=0$, tout es à 0. $k/k!$ $\rightarrow 1/(k-1$)}\Downarrow\\
+&\Downarrow\text{si $k=0$, le tout vaut 0. $k/k!$ $\rightarrow 1/(k-1$)}\Downarrow\\
 & = \overset{n}{\underset{k= 1}{\sum}}
 \phantom{a}\dfrac{n!}{(k-1)!\phantom{a}(n-k)!}\\
 & = n\overset{n}{\underset{k= 1}{\sum}}
 \phantom{a}\dfrac{(n-1)!}{(k-1)!\phantom{a}(n-k)!}\\
-&\Downarrow\text{où L = k =1}\Downarrow\\
+&\Downarrow\text{où L = k-1}\Downarrow\\
 & = n\overset{n-1}{\underset{L= 0}{\sum}}
 \phantom{a}\dfrac{(n-1)!}{L!\phantom{a}(n-1-L)!}\\
 &= n2^{n-1}
